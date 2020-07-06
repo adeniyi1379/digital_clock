@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>DIGIATL CLOCK</title>
+        <style>
+            body{
+                background: #000000;
+                font-size: 30px;
+                color: hotpink;
+            }
+            #maindiv{
+                background: red;
+                width: 200px;
+                border-radius: 15px;
+                margin-top: 3%;
+                margin-left: 42%;
+            }
+            #hour,#min,#sec{
+                width: 50px;
+                border: none;
+                height: 30px;
+            }
+            input{
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+                background: red;
+                padding: 0px;
+                margin: 0px;
+                color: honeydew;
+                font-weight: bolder;
+                cursor: context-menu;
+            }
+            h1{
+                text-align: center;
+            }
+ 
+        </style>
+    </head>
+
+    <body>
+        <h1>Digital clock</h1>
+        <div id="maindiv">
+            <input type="text" name="hour" id="hour" readonly>:
+            <input type="text" name="min" id="min" readonly>:
+            <input type="datetime" name="" id="sec" readonly>
+        </div>
+        <script>
+            function main(){
+                var mydate = new Date;
+                var myHour= document.getElementById('hour');
+                var myMin= document.getElementById('min');
+                var mySec= document.getElementById('sec');
+                myHour.setAttribute('value', mydate.getHours());
+                myMin.setAttribute('value', mydate.getMinutes());
+                mySec.setAttribute('value', mydate.getSeconds());
+            }
+            setInterval(main,1000);
+        </script>
+    </body>
+</html>
